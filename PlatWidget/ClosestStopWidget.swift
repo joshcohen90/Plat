@@ -62,9 +62,14 @@ private struct ClosestStopView: View {
                         .foregroundStyle(.secondary)
                 }
 
-                Text(group.displayName)
-                    .font(.caption.weight(.semibold))
-                    .lineLimit(1)
+                HStack(spacing: 4) {
+                    Text(group.displayName)
+                        .font(.caption.weight(.semibold))
+                        .lineLimit(1)
+                    if let effect = group.alertEffect {
+                        AlertPill(effect: effect, compact: true)
+                    }
+                }
                 if !group.directionLabel.isEmpty {
                     Text(group.directionLabel)
                         .font(.caption2)

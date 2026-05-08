@@ -33,7 +33,11 @@ struct LockScreenView: View {
         switch family {
         case .accessoryInline:
             if let group, let arrival {
-                Text("\(arrival.line) \(arrival.minutesAway())m · \(group.displayName)")
+                if group.alertEffect != nil {
+                    Text("⚠︎ \(arrival.line) \(arrival.minutesAway())m · \(group.displayName)")
+                } else {
+                    Text("\(arrival.line) \(arrival.minutesAway())m · \(group.displayName)")
+                }
             } else {
                 Text("Plat")
             }
@@ -70,6 +74,10 @@ struct LockScreenView: View {
                             .font(.subheadline.weight(.semibold))
                             .lineLimit(1)
                             .minimumScaleFactor(0.7)
+                        if group.alertEffect != nil {
+                            Image(systemName: "exclamationmark.triangle.fill")
+                                .font(.caption2.weight(.bold))
+                        }
                     }
                     HStack(alignment: .firstTextBaseline, spacing: 3) {
                         Text("\(arrival.minutesAway())")

@@ -58,14 +58,22 @@ public enum SnapshotRefresher {
 
         let chosen = Array(sortedWithDistance.prefix(limit))
         let stopsToFetch = chosen.flatMap { $0.group.stops }
-        let arrivalsByStop = await ArrivalsService.shared.arrivalsByStop(for: stopsToFetch, limit: 3)
+
+        // Fetch arrivals + subway service alerts in parallel.
+        async let arrivalsTask = ArrivalsService.shared.arrivalsByStop(for: stopsToFetch, limit: 3)
+        let subwayLines = Set(stopsToFetch.compactMap { $0.mode == .subway ? $0.line : nil })
+        async let alertsTask = AlertsClient.shared.alertsByLine(forLines: subwayLines)
+
+        let arrivalsByStop = await arrivalsTask
+        let alertsByLine = await alertsTask
 
         let slots = chosen.map { item in
             buildSlot(group: item.group,
                       // Don't write infinity to disk — store 0 for "unknown"
                       // so the value is sane if anyone ever surfaces it.
                       distance: item.meters.isFinite ? item.meters : 0,
-                      arrivalsByStop: arrivalsByStop)
+                      arrivalsByStop: arrivalsByStop,
+                      alertsByLine: alertsByLine)
         }
 
         let snap = WidgetSnapshot(generatedAt: .now, groups: slots)
@@ -76,7 +84,8 @@ public enum SnapshotRefresher {
     /// Build a single GroupSlot from member arrivals.
     public static func buildSlot(group: ResolvedGroup,
                                  distance: Double,
-                                 arrivalsByStop: [SavedStop.ID: [Arrival]]) -> WidgetSnapshot.GroupSlot {
+                                 arrivalsByStop: [SavedStop.ID: [Arrival]],
+                                 alertsByLine: [String: [ServiceAlert]] = [:]) -> WidgetSnapshot.GroupSlot {
         let now = Date()
         let combined = group.stops.flatMap { arrivalsByStop[$0.id] ?? [] }
             .filter { $0.arrivalTime > now.addingTimeInterval(-15) }
@@ -89,13 +98,21 @@ public enum SnapshotRefresher {
             return labels.count == 1 ? labels.first ?? "" : ""
         }()
 
+        // Pick the most-severe alert touching any of this group's lines. Skip
+        // anything below `isMajor` (e.g. accessibility issues) — those clutter
+        // the widget without telling the user about a delay.
+        let groupAlerts = group.lines.flatMap { alertsByLine[$0] ?? [] }
+        let topAlert = groupAlerts.filter { $0.effect.isMajor }.mostSevere
+
         return .init(
             groupID: group.id,
             displayName: group.displayName,
             lines: group.lines,
             directionLabel: directionLabel,
             distanceMeters: distance,
-            nextArrival: next
+            nextArrival: next,
+            alertEffect: topAlert?.effect,
+            alertHeader: topAlert?.header
         )
     }
 }

@@ -9,6 +9,7 @@ struct CombinedStopDetailView: View {
     @EnvironmentObject private var saved: SavedStopsStore
 
     @State private var arrivalsByStop: [SavedStop.ID: [Arrival]] = [:]
+    @State private var alerts: [ServiceAlert] = []
     @State private var loading = false
     @State private var error: String?
 
@@ -36,6 +37,11 @@ struct CombinedStopDetailView: View {
     var body: some View {
         List {
             headerSection
+            if !alerts.isEmpty {
+                Section("Service alerts") {
+                    ForEach(alerts) { ServiceAlertRow(alert: $0) }
+                }
+            }
             arrivalsSection
             membersSection
         }
@@ -56,6 +62,10 @@ struct CombinedStopDetailView: View {
                         .labelStyle(.titleAndIcon)
                         .font(.caption)
                         .foregroundStyle(.secondary)
+                    if let topEffect = alerts.map(\.effect).max(by: { $0.severity < $1.severity }) {
+                        AlertPill(effect: topEffect)
+                            .padding(.top, 2)
+                    }
                 }
             }
         }
@@ -72,7 +82,7 @@ struct CombinedStopDetailView: View {
                 Text("No arrivals reported.").foregroundStyle(.secondary)
             } else {
                 ForEach(feed.prefix(12), id: \.self) { row in
-                    CombinedArrivalRow(stop: row.stop, arrival: row.arrival)
+                    ArrivalListRow(arrival: row.arrival, stopAttribution: row.stop)
                 }
             }
         }
@@ -102,44 +112,12 @@ struct CombinedStopDetailView: View {
     private func reload() async {
         loading = true; defer { loading = false }
         let stops = liveGroup.stops
-        let result = await ArrivalsService.shared.arrivalsByStop(for: stops, limit: 8)
-        arrivalsByStop = result
+        let subwayLines = Set(stops.compactMap { $0.mode == .subway ? $0.line : nil })
+        async let arrivalsTask = ArrivalsService.shared.arrivalsByStop(for: stops, limit: 8)
+        async let alertsTask = AlertsClient.shared.alerts(forLines: subwayLines)
+        arrivalsByStop = await arrivalsTask
+        alerts = (try? await alertsTask) ?? []
         error = nil
-    }
-}
-
-private struct CombinedArrivalRow: View {
-    let stop: SavedStop
-    let arrival: Arrival
-
-    var body: some View {
-        HStack(spacing: 12) {
-            switch arrival.mode {
-            case .subway: LineBullet(line: arrival.line)
-            case .bus:    BusBadge(line: arrival.line)
-            }
-            VStack(alignment: .leading, spacing: 2) {
-                HStack(alignment: .firstTextBaseline, spacing: 6) {
-                    Text("\(arrival.minutesAway()) min")
-                        .font(.body.monospacedDigit().weight(.semibold))
-                    Text(arrival.arrivalTime, style: .time)
-                        .font(.caption.monospacedDigit())
-                        .foregroundStyle(.secondary)
-                }
-                Text(rowSubtitle)
-                    .font(.caption)
-                    .foregroundStyle(.secondary)
-                    .lineLimit(1)
-            }
-            Spacer(minLength: 0)
-        }
-        .padding(.vertical, 2)
-    }
-
-    private var rowSubtitle: String {
-        let dir = stop.directionLabel
-        if dir.isEmpty { return stop.stopName }
-        return "\(dir) · \(stop.stopName)"
     }
 }
 

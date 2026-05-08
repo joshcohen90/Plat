@@ -75,14 +75,21 @@ private struct GroupRow: View {
         HStack(spacing: 10) {
             LineCluster(lines: group.lines, primary: group.nextArrival?.line)
             VStack(alignment: .leading, spacing: 1) {
-                Text(group.displayName)
-                    .font(.callout.weight(.semibold))
-                    .lineLimit(1)
+                HStack(spacing: 4) {
+                    Text(group.displayName)
+                        .font(.callout.weight(.semibold))
+                        .lineLimit(1)
+                    if let effect = group.alertEffect {
+                        AlertPill(effect: effect, compact: true)
+                    }
+                }
                 if !group.directionLabel.isEmpty {
                     Text(group.directionLabel)
                         .font(.caption2)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
+                } else if let m = group.nextArrival?.delayMinutes(), m != 0 {
+                    DelayPill(minutes: m)
                 }
             }
             Spacer(minLength: 4)
