@@ -15,7 +15,7 @@ settings:
   base:
     SWIFT_VERSION: "5.0"
     GENERATE_INFOPLIST_FILE: YES
-    CURRENT_PROJECT_VERSION: 1
+    CURRENT_PROJECT_VERSION: 4
     MARKETING_VERSION: "1.0"
 
 packages:
@@ -84,6 +84,7 @@ targets:
     info:
       path: PlatWidget/Info.plist
       properties:
+        CFBundleDisplayName: Plat
         NSExtension:
           NSExtensionPointIdentifier: com.apple.widgetkit-extension
     dependencies:

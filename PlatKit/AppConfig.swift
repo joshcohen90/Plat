@@ -9,5 +9,5 @@ public enum AppConfig {
     /// deployed Worker URL — see `workers/bus-proxy/README.md`. The proxy
     /// injects the bustime.mta.info API key server-side so it never ships
     /// in the iOS binary.
-    public static let busProxyURL = URL(string: "https://plat-bus-proxy.example.workers.dev")!
+    public static let busProxyURL = URL(string: "https://plat-bus-proxy.2k45r7858t.workers.dev")!
 }

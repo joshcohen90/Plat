@@ -4,7 +4,7 @@
 <dict>
 	<key>com.apple.security.application-groups</key>
 	<array>
-		<string>group.Joshua-Cohen.NextStop</string>
+		<string>group.Joshua-Cohen.Plat</string>
 	</array>
 </dict>
 </plist>
