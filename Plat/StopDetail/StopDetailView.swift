@@ -60,8 +60,8 @@ struct StopDetailView: View {
         }
     }
 
-    /// Subway-only: pull alerts for this line. Bus has per-trip delay info on
-    /// the arrivals themselves, no separate alerts feed.
+    /// Subway-only: pull alerts for this line. Bus has no equivalent
+    /// route-level alerts feed in our pipeline.
     private func fetchAlerts() async -> [ServiceAlert] {
         guard stop.mode == .subway else { return [] }
         return (try? await AlertsClient.shared.alerts(forLines: [stop.line])) ?? []
@@ -86,7 +86,6 @@ struct ArrivalListRow: View {
                     Text(arrival.arrivalTime, style: .time)
                         .font(.caption.monospacedDigit())
                         .foregroundStyle(.secondary)
-                    DelayPill(minutes: arrival.delayMinutes())
                 }
                 if let attribution = stopAttribution {
                     Text(attributionText(for: attribution))

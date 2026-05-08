@@ -55,24 +55,3 @@ public struct AlertPill: View {
     }
 }
 
-/// Per-arrival delay label (positive = late, negative = early). Returns an
-/// empty view for nil / on-time so callers can use it unconditionally.
-public struct DelayPill: View {
-    public let minutes: Int?
-
-    public init(minutes: Int?) { self.minutes = minutes }
-
-    public var body: some View {
-        Group {
-            if let m = minutes, m != 0 {
-                let late = m > 0
-                Text(late ? "+\(m)m late" : "\(m)m early")
-                    .font(.caption2.weight(.heavy))
-                    .foregroundStyle(.white)
-                    .padding(.horizontal, 5)
-                    .padding(.vertical, 1)
-                    .background(Capsule().fill(late ? Color.orange : Color.green))
-            }
-        }
-    }
-}

@@ -8,31 +8,16 @@ public struct Arrival: Codable, Hashable, Sendable {
     public let arrivalTime: Date
     public let tripID: String?
     public let vehicleRef: String?      // bus: VehicleRef from SIRI; subway: nil
-    /// Difference between predicted and scheduled arrival in seconds.
-    /// Positive = late, negative = early. Bus: derived from SIRI Aimed vs
-    /// Expected. Subway: GTFS-RT `StopTimeEvent.delay` if present (MTA rarely
-    /// populates this). nil = scheduled time unknown / no delta.
-    public let delaySeconds: Int?
 
     public init(mode: TransitMode, line: String, stopID: String, directionCode: String,
-                arrivalTime: Date, tripID: String? = nil, vehicleRef: String? = nil,
-                delaySeconds: Int? = nil) {
+                arrivalTime: Date, tripID: String? = nil, vehicleRef: String? = nil) {
         self.mode = mode; self.line = line; self.stopID = stopID
         self.directionCode = directionCode; self.arrivalTime = arrivalTime
         self.tripID = tripID; self.vehicleRef = vehicleRef
-        self.delaySeconds = delaySeconds
     }
 
     public func minutesAway(now: Date = .now) -> Int {
         max(0, Int((arrivalTime.timeIntervalSince(now) / 60).rounded()))
-    }
-
-    /// Rounded delay in minutes; nil if `delaySeconds` is nil. Treats |delay|
-    /// under 60s as on-time (returns 0) so the UI doesn't flap on noise.
-    public func delayMinutes() -> Int? {
-        guard let s = delaySeconds else { return nil }
-        if abs(s) < 60 { return 0 }
-        return Int((Double(s) / 60).rounded())
     }
 }
 

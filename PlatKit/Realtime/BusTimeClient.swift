@@ -68,17 +68,9 @@ public actor BusTimeClient {
             let journey = v.MonitoredVehicleJourney
             guard let call = journey.MonitoredCall else { continue }
             // Prefer Expected, fall back to Aimed (scheduled).
-            let expected = call.ExpectedArrivalTime ?? call.ExpectedDepartureTime
-            let aimed = call.AimedArrivalTime ?? call.AimedDepartureTime
-            let when = expected ?? aimed
+            let when = call.ExpectedArrivalTime ?? call.ExpectedDepartureTime
+                    ?? call.AimedArrivalTime ?? call.AimedDepartureTime
             guard let arrivalTime = when, arrivalTime > now.addingTimeInterval(-30) else { continue }
-
-            // Per-trip delay = predicted minus scheduled. Only meaningful when
-            // both are present; absent for runs we only have a schedule for.
-            let delaySeconds: Int? = {
-                guard let expected, let aimed else { return nil }
-                return Int(expected.timeIntervalSince(aimed))
-            }()
 
             out.append(Arrival(
                 mode: .bus,
@@ -87,8 +79,7 @@ public actor BusTimeClient {
                 directionCode: String(directionID),
                 arrivalTime: arrivalTime,
                 tripID: journey.JourneyPatternRef,
-                vehicleRef: journey.VehicleRef,
-                delaySeconds: delaySeconds
+                vehicleRef: journey.VehicleRef
             ))
         }
         return out

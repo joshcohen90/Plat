@@ -88,8 +88,6 @@ private struct GroupRow: View {
                         .font(.caption2)
                         .foregroundStyle(.secondary)
                         .lineLimit(1)
-                } else if let m = group.nextArrival?.delayMinutes(), m != 0 {
-                    DelayPill(minutes: m)
                 }
             }
             Spacer(minLength: 4)
