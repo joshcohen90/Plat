@@ -1,4 +1,4 @@
-# NextStop
+# Plat
 
 iOS app that shows the next train arrivals at the 3 closest of your saved MTA subway stops, on a Home Screen and Lock Screen widget. Background location updates the "closest 3" as you move.
 
@@ -13,25 +13,25 @@ iOS app that shows the next train arrivals at the 3 closest of your saved MTA su
 ## First-run
 
 1. Open `XCODE_SETUP.md` and follow it end-to-end (creates targets, App Group, entitlements, adds Swift Protobuf SPM).
-2. `./Tools/gen-proto.sh` — generates `NextStopKit/Realtime/gtfs_realtime.pb.swift`.
-3. `./Tools/build_stops_json.sh` — derives `NextStop/Resources/stops.json` from MTA static GTFS.
+2. `./Tools/gen-proto.sh` — generates `PlatKit/Realtime/gtfs_realtime.pb.swift`.
+3. `./Tools/build_stops_json.sh` — derives `Plat/Resources/stops.json` from MTA static GTFS.
 4. Build & run on device (widget won't fully exercise in simulator — background location and BGTask only fire on hardware).
 
 ## Architecture
 
-- `NextStopKit/` (framework, shared with widget)
+- `PlatKit/` (framework, shared with widget)
   - `Models/` `TransitStop`, `SavedStop`, `Arrival`, `WidgetSnapshot`
   - `Storage/` `AppGroup` (suite identifier + container URL), `SavedStopsStore`, `SnapshotStore`
   - `Realtime/` `FeedRouter` (line→feed URL), `GTFSRealtimeClient` (protobuf decode + cache), `ArrivalsService` (per-stop filtering, parallel feed fetch)
   - `Geo/` `Closest` (3-nearest computation)
   - `StaticData/` `StopCatalog` (loads bundled `stops.json`, fallback seed)
-- `NextStop/` (app)
+- `Plat/` (app)
   - `Search/` line list → stop list → direction picker
   - `SavedStops/` list with distance + swipe-to-delete
   - `StopDetail/` per-stop arrivals view (used in-app, not in widget)
   - `Location/` `LocationManager` (significant-change CL)
   - `Background/` `RefreshCoordinator` (the pipeline), `BackgroundRefresh` (BGTask scheduling)
-- `NextStopWidget/`
+- `PlatWidget/`
   - `Provider` (TimelineProvider reading the snapshot from the App Group)
   - `NearbyStopsWidget` (medium / large)
   - `LockScreenWidget` (rectangular / inline)

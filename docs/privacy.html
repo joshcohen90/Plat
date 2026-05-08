@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plat — Privacy Policy</title>
+  <style>
+    :root { --green:#00893b; --bg:#fff; --text:#1a1a1a; --muted:#555; --line:#e0e0e0; }
+    @media (prefers-color-scheme: dark) {
+      :root { --bg:#0c0d0e; --text:#f5f5f5; --muted:#a8a8ad; --line:#2a2b2d; }
+    }
+    body {
+      margin: 0;
+      font: 16px/1.6 -apple-system, BlinkMacSystemFont, "SF Pro Text", system-ui, sans-serif;
+      color: var(--text); background: var(--bg);
+    }
+    .container { max-width: 720px; margin: 0 auto; padding: 56px 24px 96px; }
+    .nav { font-size: 14px; margin-bottom: 32px; }
+    .nav a { color: var(--green); text-decoration: none; }
+    .nav a:hover { text-decoration: underline; }
+    h1 { font-size: 32px; font-weight: 800; margin: 0 0 4px; letter-spacing: -0.5px; }
+    .updated { color: var(--muted); font-size: 14px; margin: 0 0 32px; }
+    h2 { font-size: 20px; font-weight: 700; margin: 36px 0 12px; }
+    p, ul { color: var(--text); }
+    ul { padding-left: 24px; }
+    li { margin: 6px 0; }
+    a { color: var(--green); }
+    code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: 14px; background: var(--line); padding: 1px 5px; border-radius: 4px; }
+  </style>
+</head>
+<body>
+<div class="container">
+  <p class="nav"><a href="index.html">← Plat home</a></p>
+
+  <h1>Privacy Policy</h1>
+  <p class="updated">Last updated: May 8, 2026</p>
+
+  <p>
+    Plat is an iOS app for showing the next train and bus arrivals at the saved
+    transit stops you choose. This page explains what data the app uses, how
+    it's used, and what is <strong>not</strong> collected.
+  </p>
+
+  <h2>Plain-English summary</h2>
+  <ul>
+    <li>We use your iPhone's location to show which of your saved stops are closest to you. That's it.</li>
+    <li>We do not have a server holding any user data, nor an account system.</li>
+    <li>We do not collect, transmit, sell, or share your data.</li>
+    <li>We do not use any analytics or tracking SDKs.</li>
+    <li>The list of stops you save is stored locally on your device.</li>
+  </ul>
+
+  <h2>Location</h2>
+  <p>
+    Plat requests location access ("When In Use" first, then optionally
+    "Always") to:
+  </p>
+  <ul>
+    <li>Identify the <strong>3 closest</strong> of your saved transit stops.</li>
+    <li>Update that ranking as you move between neighborhoods so the widget reflects your current area.</li>
+  </ul>
+  <p>
+    We use <strong>significant location changes</strong> (Apple's low-power
+    location API) in the background. Your precise location is read on-device
+    only. It is never stored, transmitted, or shared with us or any third
+    party. If you decline location access, the app still works — it simply
+    uses the order in which you saved your stops instead of distance.
+  </p>
+
+  <h2>Data stored on your device</h2>
+  <ul>
+    <li>Your list of saved transit stops (line, station, direction, location).</li>
+    <li>Your manual stop groupings ("combine these into one location").</li>
+    <li>A cached snapshot of upcoming arrivals so the widget renders quickly.</li>
+  </ul>
+  <p>
+    These are stored in the app's private storage and shared with the Plat
+    widget via an Apple App Group. Nothing leaves your device.
+  </p>
+
+  <h2>Network requests</h2>
+  <p>
+    Plat makes HTTPS requests to:
+  </p>
+  <ul>
+    <li><code>api-endpoint.mta.info</code> — the Metropolitan Transportation Authority's GTFS-Realtime feeds for subway arrival times.</li>
+    <li>A Cloudflare Worker we operate that forwards bus arrival queries to <code>bustime.mta.info</code>. The Worker injects an MTA Bus Time API key server-side so it never ships in the iOS binary; it does not log or store your queries.</li>
+  </ul>
+  <p>
+    These requests include the saved stop ID and route you're checking
+    arrivals for. They do not include your location, identity, or any data
+    that could be used to identify you.
+  </p>
+
+  <h2>Children</h2>
+  <p>
+    Plat does not knowingly collect data from children, because it does not
+    collect data from anyone.
+  </p>
+
+  <h2>Third-party services</h2>
+  <p>
+    The only third party the app contacts (directly or via our Worker) is the
+    Metropolitan Transportation Authority (MTA), to fetch transit data. MTA's
+    terms are published at <a href="https://api.mta.info">api.mta.info</a>.
+  </p>
+
+  <h2>Changes</h2>
+  <p>
+    If this policy changes, the new version will be posted at the same URL.
+    The "Last updated" date at the top will reflect the change.
+  </p>
+
+  <h2>Contact</h2>
+  <p>
+    For privacy questions, email
+    <a href="mailto:SUPPORT_EMAIL_PLACEHOLDER">SUPPORT_EMAIL_PLACEHOLDER</a>.
+  </p>
+</div>
+</body>
+</html>

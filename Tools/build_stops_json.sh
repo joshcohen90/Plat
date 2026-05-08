@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # Downloads MTA static GTFS for the subway and derives a slim stops.json
-# tailored for NextStop. Output: NextStop/Resources/stops.json
+# tailored for Plat. Output: Plat/Resources/stops.json
 #
 # stops.json schema: [{ "id": parent_stop_id, "name", "lines": [route_id...], "lat", "lon" }]
 
@@ -8,7 +8,7 @@ set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TMP="$(mktemp -d)"
-OUT="$ROOT/NextStop/Resources/stops.json"
+OUT="$ROOT/Plat/Resources/stops.json"
 
 echo "→ tmp: $TMP"
 cd "$TMP"
@@ -76,4 +76,4 @@ PY
 mkdir -p "$(dirname "$OUT")"
 mv out.json "$OUT"
 echo "→ wrote $OUT"
-echo "Add it to the NextStop target's Copy Bundle Resources phase if not already."
+echo "Add it to the Plat target's Copy Bundle Resources phase if not already."

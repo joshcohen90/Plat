@@ -2,14 +2,14 @@
 # Downloads MTA bus static GTFS for all 5 boroughs + MTA Bus Company,
 # derives a slim bus_stops.json. One row per (route, direction, stop).
 #
-# Output: NextStop/Resources/bus_stops.json
+# Output: Plat/Resources/bus_stops.json
 # Schema: [{ code, name, lat, lon, line (route_id), directionID (0|1), headsign }]
 
 set -euo pipefail
 
 ROOT="$(cd "$(dirname "$0")/.." && pwd)"
 TMP="$(mktemp -d)"
-OUT="$ROOT/NextStop/Resources/bus_stops.json"
+OUT="$ROOT/Plat/Resources/bus_stops.json"
 
 # Borough zips. As of 2024–2025, paths under web.mta.info/developers/data/.
 URLS=(
@@ -115,4 +115,4 @@ print(f"wrote {len(records)} (route,direction,stop) rows from {len(stops)} uniqu
 PY
 
 echo "→ wrote $OUT"
-echo "Add it to the NextStop target's Copy Bundle Resources phase."
+echo "Add it to the Plat target's Copy Bundle Resources phase."

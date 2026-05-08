@@ -1,0 +1,17 @@
+name = "plat-bus-proxy"
+main = "src/index.js"
+compatibility_date = "2026-04-01"
+
+# After deploy, your worker will be available at:
+#   https://plat-bus-proxy.<your-cloudflare-account>.workers.dev
+#
+# Optional: bind a custom domain via the Cloudflare dashboard.
+#   Workers & Pages → plat-bus-proxy → Custom Domains.
+#
+# Free tier limits (as of 2025): 100k requests/day, 10ms CPU per request.
+# A single user opening the widget triggers ≤3 SIRI calls, and edge caching
+# collapses duplicates across users. Plenty of headroom for a NYC-only app.
+
+# Set the MTA Bus Time API key as a secret (not committed to git):
+#   wrangler secret put MTA_KEY
+# Paste your bustime.mta.info key when prompted.

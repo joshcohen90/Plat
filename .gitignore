@@ -9,17 +9,16 @@ build/
 # macOS
 .DS_Store
 
-# Secrets — do not commit credentials
-NextStopKit/Realtime/Secrets.swift
+# Secrets removed — bus key now lives only in the Cloudflare Worker.
 
 # Local-only build settings (Team ID, etc.)
 Local.xcconfig
 
 # Generated artifacts (regenerate with Tools/ scripts)
-NextStopKit/Realtime/gtfs_realtime.pb.swift
-NextStopKit/Realtime/gtfs-realtime.pb.swift
-NextStop/Resources/stops.json
-NextStop/Resources/bus_stops.json
+PlatKit/Realtime/gtfs_realtime.pb.swift
+PlatKit/Realtime/gtfs-realtime.pb.swift
+Plat/Resources/stops.json
+Plat/Resources/bus_stops.json
 
 # xcodegen backups
 *.xcodeproj.bak.*
