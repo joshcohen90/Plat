@@ -19,9 +19,6 @@ struct SettingsView: View {
                     Link(destination: AppConfig.privacyURL) {
                         Row(label: "Privacy Policy", trailingSymbol: "arrow.up.right.square")
                     }
-                    Link(destination: URL(string: "mailto:\(AppConfig.supportEmail)")!) {
-                        Row(label: "Send Feedback", trailingSymbol: "envelope")
-                    }
                     Button {
                         showOnboarding = true
                     } label: {

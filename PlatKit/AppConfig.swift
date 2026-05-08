@@ -2,9 +2,8 @@ import Foundation
 
 /// User-facing constants. Edit before each App Store submission.
 public enum AppConfig {
-    public static let privacyURL = URL(string: "https://example.com/plat/privacy")!
-    public static let supportEmail = "support@example.com"
-    public static let marketingURL = URL(string: "https://example.com/plat")!
+    public static let privacyURL = URL(string: "https://joshcohen90.github.io/Plat/privacy.html")!
+    public static let marketingURL = URL(string: "https://joshcohen90.github.io/Plat/")!
 
     /// Cloudflare Worker proxy URL for bus arrivals (SIRI). Replace with your
     /// deployed Worker URL — see `workers/bus-proxy/README.md`. The proxy

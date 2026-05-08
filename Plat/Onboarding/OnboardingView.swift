@@ -26,13 +26,13 @@ struct OnboardingView: View {
             VStack(alignment: .leading, spacing: 18) {
                 Bullet(symbol: "plus.circle.fill",
                        title: "Save your stops",
-                       body: "Pick the subway lines and bus routes you ride. Multiple lines at one corner can be combined into a single location.")
+                       detail: "Pick the subway lines and bus routes you ride. Multiple lines at one corner can be combined into a single location.")
                 Bullet(symbol: "location.fill.viewfinder",
                        title: "Smart by location",
-                       body: "Your widget shows the next arrival at the 3 saved locations closest to you. As you move between neighborhoods, it updates.")
+                       detail: "Your widget shows the next arrival at the 3 saved locations closest to you. As you move between neighborhoods, it updates.")
                 Bullet(symbol: "rectangle.stack.fill.badge.plus",
                        title: "Lock & home screen widgets",
-                       body: "Quick-glance arrivals without opening the app. Tap the refresh button on the widget for fresh data on demand.")
+                       detail: "Quick-glance arrivals without opening the app. Tap the refresh button on the widget for fresh data on demand.")
             }
             .padding(.horizontal, 28)
 
@@ -70,7 +70,7 @@ struct OnboardingView: View {
 private struct Bullet: View {
     let symbol: String
     let title: String
-    let body: String
+    let detail: String
 
     var body: some View {
         HStack(alignment: .top, spacing: 14) {
@@ -80,7 +80,7 @@ private struct Bullet: View {
                 .frame(width: 28)
             VStack(alignment: .leading, spacing: 2) {
                 Text(title).font(.subheadline.weight(.semibold))
-                Text(body).font(.footnote).foregroundStyle(.secondary)
+                Text(detail).font(.footnote).foregroundStyle(.secondary)
             }
         }
     }

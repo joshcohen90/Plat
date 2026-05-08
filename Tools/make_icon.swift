@@ -3,7 +3,7 @@ import AppKit
 import CoreGraphics
 
 // Generate a 1024×1024 Plat app icon: rounded square with an MTA-style
-// "N" bullet on a subway-green field (matches the 4/5/6 bullet color we use
+// "P" bullet on a subway-green field (matches the 4/5/6 bullet color we use
 // throughout the app). Run from the project root:
 //   swift Tools/make_icon.swift
 // Output: Plat/Assets.xcassets/AppIcon.appiconset/AppIcon-1024.png
@@ -54,8 +54,8 @@ let bulletRect = CGRect(
 ctx.setFillColor(CGColor(srgbRed: 1, green: 1, blue: 1, alpha: 1))
 ctx.fillEllipse(in: bulletRect)
 
-// "N" character inside the bullet, in the same green as the background top.
-let n: NSString = "N"
+// "P" character inside the bullet, in the same green as the background top.
+let n: NSString = "P"
 let attrs: [NSAttributedString.Key: Any] = [
     .font: NSFont.systemFont(ofSize: bulletDiameter * 0.62, weight: .black),
     .foregroundColor: NSColor(red: 0.00, green: 0.55, blue: 0.34, alpha: 1)

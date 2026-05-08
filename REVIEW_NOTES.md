@@ -69,5 +69,4 @@ and is never accessible to clients.
 
 ## Source
 
-Source code is at https://github.com/joshcohen90/Plat (private, can grant
-read access to the reviewer on request).
+Source code is at https://github.com/joshcohen90/Plat.

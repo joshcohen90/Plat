@@ -72,6 +72,6 @@ The "Last updated" date at the top will reflect the change.
 
 ## Contact
 
-For privacy questions, email: **PRIVACY_EMAIL_PLACEHOLDER**
+For privacy questions or any other contact, open an issue at https://github.com/joshcohen90/Plat/issues.
 
 (Replace this placeholder with your real support address before publishing.)
