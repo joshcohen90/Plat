@@ -111,7 +111,7 @@
 		1A93FF2212CF1CFD52C9E61B /* StopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListView.swift; sourceTree = "<group>"; };
 		2057F416A1B5A177143B8D69 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
 		2FE7C69E7C96F95706F53595 /* PlatKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = PlatKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		31A16CD7E4D4E88CFF8D82F2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
+		31A16CD7E4D4E88CFF8D82F2 /* PrivacyInfo.xcprivacy */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = PrivacyInfo.xcprivacy; sourceTree = "<group>"; };
 		35C999A8CBD480577CCBEE5D /* bus_stops.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bus_stops.json; sourceTree = "<group>"; };
 		39C5E244960D5803E2324F23 /* SnapshotRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotRefresher.swift; sourceTree = "<group>"; };
 		3FE315629AAE85E5C512AAB6 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
@@ -119,7 +119,7 @@
 		4B4797B597AF071B1D442C6F /* SavedStopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStopsView.swift; sourceTree = "<group>"; };
 		4F3A48D19B72AC76A7537C8A /* ArrivalsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsService.swift; sourceTree = "<group>"; };
 		5266E74D3FA17B6E95263436 /* DirectionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionPickerView.swift; sourceTree = "<group>"; };
-		5DBA898032B91CF0FF57CB8F /* PlatWidget.appex */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = "wrapper.app-extension"; path = PlatWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DBA898032B91CF0FF57CB8F /* PlatWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = PlatWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		5F10CB70D70F83A6985D4234 /* BusStopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopListView.swift; sourceTree = "<group>"; };
 		670A690475B46CE2B02C7D10 /* SavedStopsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStopsStore.swift; sourceTree = "<group>"; };
 		6D04626BA20DABA17CE63564 /* BusStopCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopCatalog.swift; sourceTree = "<group>"; };
@@ -136,7 +136,7 @@
 		9AEFBD774F501155ABA4015F /* SavedStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStop.swift; sourceTree = "<group>"; };
 		9CB1D8A5E640DF33CDC6AEBB /* PlatApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PlatApp.swift; sourceTree = "<group>"; };
 		9F9A105F7D1A12D15C01DE0F /* Plat.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Plat.entitlements; sourceTree = "<group>"; };
-		A37D6674927D3CBCBF1F1776 /* Plat.app */ = {isa = PBXFileReference; includeInIndex = 0; lastKnownFileType = wrapper.application; path = Plat.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A37D6674927D3CBCBF1F1776 /* Plat.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Plat.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		AB47BCA1EA67A14B2D87AE57 /* TransitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitMode.swift; sourceTree = "<group>"; };
 		AEE98735D57447E854FC0BAA /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
 		AF774E45DB5C690B20A3081C /* OnboardingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingView.swift; sourceTree = "<group>"; };
@@ -184,6 +184,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		03A3EBB02FAE744000F062EA /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				"TEMP_0A872182-2278-4F91-B480-C2DFAA1F31D2" /* Local.xcconfig */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
 		0C41C9B59F7A32C29F3367CA /* StaticData */ = {
 			isa = PBXGroup;
 			children = (
@@ -223,6 +231,7 @@
 				204E6D76CE07225EE18F7C65 /* PlatKit */,
 				DCBE9B95A8DA1F690BCCF373 /* PlatWidget */,
 				FA33257BFECFE6F7CEA01E61 /* Products */,
+				03A3EBB02FAE744000F062EA /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -380,14 +389,6 @@
 				993CEC33EF1FF0DDB1A454B1 /* LineBullet.swift */,
 			);
 			path = UI;
-			sourceTree = "<group>";
-		};
-		"TEMP_0648AF83-6418-40FD-B756-EB511544A298" /* Plat */ = {
-			isa = PBXGroup;
-			children = (
-				"TEMP_0A872182-2278-4F91-B480-C2DFAA1F31D2" /* Local.xcconfig */,
-			);
-			path = Plat;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -604,7 +605,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.Plat.widget";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
@@ -615,17 +620,23 @@
 				CODE_SIGN_ENTITLEMENTS = Plat/Plat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Plat/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow background location so your widget stays accurate when you move between neighborhoods.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Plat uses your location to show the closest saved transit stops.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.Plat";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -773,7 +784,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.PlatKit";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Debug;
@@ -790,7 +805,11 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.Plat.widget";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -811,7 +830,11 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.PlatKit";
 				SDKROOT = iphoneos;
 				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 				VERSIONING_SYSTEM = "apple-generic";
 			};
 			name = Release;
@@ -823,17 +846,23 @@
 				CODE_SIGN_ENTITLEMENTS = Plat/Plat.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				INFOPLIST_FILE = Plat/Info.plist;
+				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.travel";
 				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow background location so your widget stays accurate when you move between neighborhoods.";
 				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "Plat uses your location to show the closest saved transit stops.";
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				INFOPLIST_KEY_UISupportedInterfaceOrientations = UIInterfaceOrientationPortrait;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.Plat";
 				SDKROOT = iphoneos;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator";
+				SUPPORTS_MACCATALYST = NO;
+				SUPPORTS_MAC_DESIGNED_FOR_IPHONE_IPAD = NO;
+				SUPPORTS_XR_DESIGNED_FOR_IPHONE_IPAD = NO;
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
