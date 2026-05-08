@@ -6,133 +6,664 @@
 	objectVersion = 77;
 	objects = {
 
+/* Begin PBXBuildFile section */
+		00C90A4E82B4A656280F4AFA /* SwiftProtobuf in Frameworks */ = {isa = PBXBuildFile; productRef = 0813E1B4C1233630A4261C38 /* SwiftProtobuf */; };
+		05EDDBD2130484A4412DDEF2 /* LocationManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C45B4B0F05895BB969CE6639 /* LocationManager.swift */; };
+		0AF8DAE141B9362810182C88 /* LockScreenWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = E117B1D5D651AE0DF0CD6211 /* LockScreenWidget.swift */; };
+		0B24DAE2F3F9AD48F68D283E /* stops.json in Resources */ = {isa = PBXBuildFile; fileRef = CBBC88A81860B5F3E7905B59 /* stops.json */; };
+		18D98F7AFB8574B750E2341E /* gtfs-realtime.pb.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00D1FD41F440A0668F3B3258 /* gtfs-realtime.pb.swift */; };
+		1B4067575E151EEAA5CB4D2D /* SavedStopsStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 445F0CD935FC2DE07AEF0244 /* SavedStopsStore.swift */; };
+		21DCE4E1531351DD9C752C77 /* Arrival.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72C2C37F13759EF68324617 /* Arrival.swift */; };
+		2E3FC23C285D1D37ACE1A964 /* SavedStopsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5FC9D6690AD46A054CA70C33 /* SavedStopsView.swift */; };
+		30017193D48E772122C5D24F /* AppGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 36251CED700339A8801CFDA2 /* AppGroup.swift */; };
+		32FFFB16AC67FD4003866CE7 /* SnapshotRefresher.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6ABE6D8B7429E528D7099113 /* SnapshotRefresher.swift */; };
+		43CEE829E2A60BB609E9FD12 /* LineListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD93752C96F02171F0C7F5AF /* LineListView.swift */; };
+		474DA66D8C2D88377F5432BE /* BusStopCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 72D91A4218DEB26BF1FB6D53 /* BusStopCatalog.swift */; };
+		4D5D65AE8F74F8A9B6B6F4AD /* NextStopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4C5AF3A392FE498BE53F76 /* NextStopKit.framework */; };
+		4FCE572420E614B33B6C55FB /* Closest.swift in Sources */ = {isa = PBXBuildFile; fileRef = CE889BB8091DF62B7F41E118 /* Closest.swift */; };
+		51A7EB4047561B885A0AE50E /* bus_stops.json in Resources */ = {isa = PBXBuildFile; fileRef = 5CEAFC01CB6AD4D369221B29 /* bus_stops.json */; };
+		5AEC5FDB5D0EC0FD427122C2 /* DirectionPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = F351D5512DF3FEDD66372044 /* DirectionPickerView.swift */; };
+		5D9096FCA0BC653BF91FBA64 /* StopGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = D67E55F3A806CEE85E02564C /* StopGroup.swift */; };
+		65B1F81EBEF0EA85E7B91404 /* NextStopWidgetBundle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 387E83BFDAC4131B19F88F2E /* NextStopWidgetBundle.swift */; };
+		70CD28AF6646D6CEEA97C6BE /* StopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8A77405C42F09F93693C44E /* StopListView.swift */; };
+		7156AC5CFB16C128ED3EEA33 /* LineBullet.swift in Sources */ = {isa = PBXBuildFile; fileRef = C176F876819F68B2295F9F17 /* LineBullet.swift */; };
+		72192A9EAA29C58DB83F1DA6 /* NearbyStopsWidget.swift in Sources */ = {isa = PBXBuildFile; fileRef = 00161CD3B95E8BA211EE6111 /* NearbyStopsWidget.swift */; };
+		73D6D2C9C28AF7AA1C072009 /* StopDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65258FDEE892EC82FCAF9CFE /* StopDetailView.swift */; };
+		8AF45C5D261A97229EA17069 /* NextStopKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4C5AF3A392FE498BE53F76 /* NextStopKit.framework */; };
+		91427AA90C6A7795F0322458 /* RootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8019E18BE2AE03DAED758E44 /* RootView.swift */; };
+		98B4A64AECCB4EE8189DF91E /* TransitMode.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5EB7407EA906F2E2506A08CC /* TransitMode.swift */; };
+		B19740539A58C11FD0B98F79 /* Provider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 06AACD3B11690285F18DD6E7 /* Provider.swift */; };
+		B5F293B3789B7F502EB378AC /* BusStopListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60F3AC2A25A47178046EC801 /* BusStopListView.swift */; };
+		B72D377C9C8EA5636204C506 /* BackgroundRefresh.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89E6DCF4415B091C83DF7E92 /* BackgroundRefresh.swift */; };
+		BE24F4ABC375301DD8F2E6C9 /* SavedStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0748140B107715F86B1A5EE3 /* SavedStop.swift */; };
+		CEA1FEB24969CE0DCA73883B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = F5E6A12A15F1DE34A7D1E727 /* Assets.xcassets */; };
+		D0482DF44691101B58ED8829 /* RefreshArrivalsIntent.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5586D3A09A53EEAFC368A0F /* RefreshArrivalsIntent.swift */; };
+		D57FDB18B91AFAE1041C58FD /* TransitStop.swift in Sources */ = {isa = PBXBuildFile; fileRef = C6F2FF813F2B476090BFEB3C /* TransitStop.swift */; };
+		D92E70DC3E1EBB7365F14C59 /* Secrets.swift in Sources */ = {isa = PBXBuildFile; fileRef = 39CE6EDA30DEBE066D467968 /* Secrets.swift */; };
+		DD7AC8E5136CE3AD4F486355 /* ArrivalsService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 503B161DF476FCB78E6B0654 /* ArrivalsService.swift */; };
+		E20AB32304C33C274A90B5EB /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = E280833F711D0C6249479340 /* FeedRouter.swift */; };
+		E53C40217940F84BAE6F0781 /* NextStopApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7973F878A9FF6A7D5EDBE168 /* NextStopApp.swift */; };
+		E73CF104ECB6E1C79B43884A /* StopCatalog.swift in Sources */ = {isa = PBXBuildFile; fileRef = AFB157D3596AF0DBDC167598 /* StopCatalog.swift */; };
+		F32CFFAC270D6CEBAFCC4AF0 /* GTFSRealtimeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = DBCC8C1968A9B47CA07ACD3B /* GTFSRealtimeClient.swift */; };
+		F34E8138152359EA13B9A2E9 /* NextStopKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 6E4C5AF3A392FE498BE53F76 /* NextStopKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F38FD18B4710F191DAA7AC66 /* NextStopWidget.appex in Embed Foundation Extensions */ = {isa = PBXBuildFile; fileRef = AB918F23B79CAF890FEE341B /* NextStopWidget.appex */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		F7E9AE4A9DFA29E684C7ED8C /* BusTimeClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = A22823C1844A4306CA4ED7E5 /* BusTimeClient.swift */; };
+		F8EC3A579B4208001ECCDEB6 /* RefreshCoordinator.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB179BE83F06F576356BCDF0 /* RefreshCoordinator.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		91FD15FDE986C1FA91D628FF /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66BF7E08A702838ECEBB6CA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C20466FB5E3035F1F226DF5C;
+			remoteInfo = NextStopWidget;
+		};
+		9687E259D2C8E189F2DCF36F /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66BF7E08A702838ECEBB6CA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B95A7E7D7DA5F5D7BE1C8DA2;
+			remoteInfo = NextStopKit;
+		};
+		F53A4095211B6EA77674B723 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 66BF7E08A702838ECEBB6CA5 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = B95A7E7D7DA5F5D7BE1C8DA2;
+			remoteInfo = NextStopKit;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		4332E214C003C72C71D80AC5 /* Embed Foundation Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				F38FD18B4710F191DAA7AC66 /* NextStopWidget.appex in Embed Foundation Extensions */,
+			);
+			name = "Embed Foundation Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7E57DDAE7D6991BE3F2BFB78 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				F34E8138152359EA13B9A2E9 /* NextStopKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
 /* Begin PBXFileReference section */
-		03C4FC212FAE4F5E003E5C30 /* NextStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		00161CD3B95E8BA211EE6111 /* NearbyStopsWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NearbyStopsWidget.swift; sourceTree = "<group>"; };
+		00D1FD41F440A0668F3B3258 /* gtfs-realtime.pb.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "gtfs-realtime.pb.swift"; sourceTree = "<group>"; };
+		06AACD3B11690285F18DD6E7 /* Provider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Provider.swift; sourceTree = "<group>"; };
+		0748140B107715F86B1A5EE3 /* SavedStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStop.swift; sourceTree = "<group>"; };
+		36251CED700339A8801CFDA2 /* AppGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppGroup.swift; sourceTree = "<group>"; };
+		36F722EE41F82189D2274995 /* NextStop.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NextStop.entitlements; sourceTree = "<group>"; };
+		387E83BFDAC4131B19F88F2E /* NextStopWidgetBundle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStopWidgetBundle.swift; sourceTree = "<group>"; };
+		39CE6EDA30DEBE066D467968 /* Secrets.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Secrets.swift; sourceTree = "<group>"; };
+		445F0CD935FC2DE07AEF0244 /* SavedStopsStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStopsStore.swift; sourceTree = "<group>"; };
+		503B161DF476FCB78E6B0654 /* ArrivalsService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArrivalsService.swift; sourceTree = "<group>"; };
+		5CEAFC01CB6AD4D369221B29 /* bus_stops.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = bus_stops.json; sourceTree = "<group>"; };
+		5EB7407EA906F2E2506A08CC /* TransitMode.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitMode.swift; sourceTree = "<group>"; };
+		5FC9D6690AD46A054CA70C33 /* SavedStopsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SavedStopsView.swift; sourceTree = "<group>"; };
+		60F3AC2A25A47178046EC801 /* BusStopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopListView.swift; sourceTree = "<group>"; };
+		65258FDEE892EC82FCAF9CFE /* StopDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopDetailView.swift; sourceTree = "<group>"; };
+		6ABE6D8B7429E528D7099113 /* SnapshotRefresher.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SnapshotRefresher.swift; sourceTree = "<group>"; };
+		6E4C5AF3A392FE498BE53F76 /* NextStopKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = NextStopKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72D91A4218DEB26BF1FB6D53 /* BusStopCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusStopCatalog.swift; sourceTree = "<group>"; };
+		773D67C6459EF27DD4843486 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		7973F878A9FF6A7D5EDBE168 /* NextStopApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NextStopApp.swift; sourceTree = "<group>"; };
+		8019E18BE2AE03DAED758E44 /* RootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RootView.swift; sourceTree = "<group>"; };
+		89E6DCF4415B091C83DF7E92 /* BackgroundRefresh.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BackgroundRefresh.swift; sourceTree = "<group>"; };
+		92198E560009E092EE932D92 /* NextStopWidget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = NextStopWidget.entitlements; sourceTree = "<group>"; };
+		984741704029B76234A765C3 /* NextStop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = NextStop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		A22823C1844A4306CA4ED7E5 /* BusTimeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BusTimeClient.swift; sourceTree = "<group>"; };
+		A8A77405C42F09F93693C44E /* StopListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopListView.swift; sourceTree = "<group>"; };
+		AB918F23B79CAF890FEE341B /* NextStopWidget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = NextStopWidget.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AFB157D3596AF0DBDC167598 /* StopCatalog.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopCatalog.swift; sourceTree = "<group>"; };
+		C176F876819F68B2295F9F17 /* LineBullet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineBullet.swift; sourceTree = "<group>"; };
+		C45B4B0F05895BB969CE6639 /* LocationManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationManager.swift; sourceTree = "<group>"; };
+		C6F2FF813F2B476090BFEB3C /* TransitStop.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TransitStop.swift; sourceTree = "<group>"; };
+		CB179BE83F06F576356BCDF0 /* RefreshCoordinator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshCoordinator.swift; sourceTree = "<group>"; };
+		CBBC88A81860B5F3E7905B59 /* stops.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = stops.json; sourceTree = "<group>"; };
+		CE889BB8091DF62B7F41E118 /* Closest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Closest.swift; sourceTree = "<group>"; };
+		D67E55F3A806CEE85E02564C /* StopGroup.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StopGroup.swift; sourceTree = "<group>"; };
+		D72C2C37F13759EF68324617 /* Arrival.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Arrival.swift; sourceTree = "<group>"; };
+		DBCC8C1968A9B47CA07ACD3B /* GTFSRealtimeClient.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GTFSRealtimeClient.swift; sourceTree = "<group>"; };
+		DD93752C96F02171F0C7F5AF /* LineListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LineListView.swift; sourceTree = "<group>"; };
+		E117B1D5D651AE0DF0CD6211 /* LockScreenWidget.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LockScreenWidget.swift; sourceTree = "<group>"; };
+		E280833F711D0C6249479340 /* FeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRouter.swift; sourceTree = "<group>"; };
+		E5586D3A09A53EEAFC368A0F /* RefreshArrivalsIntent.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshArrivalsIntent.swift; sourceTree = "<group>"; };
+		EE3141C58877DE96F4DD28D5 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		F351D5512DF3FEDD66372044 /* DirectionPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DirectionPickerView.swift; sourceTree = "<group>"; };
+		F5E6A12A15F1DE34A7D1E727 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		"TEMP_A2AB90E2-2642-4659-BE2B-8C3BA045AACF" /* Local.xcconfig */ = {isa = PBXFileReference; lastKnownFileType = text.xcconfig; path = Local.xcconfig; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
-/* Begin PBXFileSystemSynchronizedRootGroup section */
-		03C4FC232FAE4F5E003E5C30 /* NextStop */ = {
-			isa = PBXFileSystemSynchronizedRootGroup;
-			path = NextStop;
-			sourceTree = "<group>";
-		};
-/* End PBXFileSystemSynchronizedRootGroup section */
-
 /* Begin PBXFrameworksBuildPhase section */
-		03C4FC1E2FAE4F5E003E5C30 /* Frameworks */ = {
+		066C3B8E3B11AB97B5033994 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				00C90A4E82B4A656280F4AFA /* SwiftProtobuf in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7CB820C09AFCAA235B6B27E2 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8AF45C5D261A97229EA17069 /* NextStopKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		7D6DA34D267A17AF1BD37930 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				4D5D65AE8F74F8A9B6B6F4AD /* NextStopKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		03C4FC182FAE4F5E003E5C30 = {
+		03A3EBA62FAE611F00F062EA /* Recovered References */ = {
 			isa = PBXGroup;
 			children = (
-				03C4FC232FAE4F5E003E5C30 /* NextStop */,
-				03C4FC222FAE4F5E003E5C30 /* Products */,
+				"TEMP_A2AB90E2-2642-4659-BE2B-8C3BA045AACF" /* Local.xcconfig */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		15C6109BC11B97F3D18D5A0F /* Storage */ = {
+			isa = PBXGroup;
+			children = (
+				36251CED700339A8801CFDA2 /* AppGroup.swift */,
+				445F0CD935FC2DE07AEF0244 /* SavedStopsStore.swift */,
+			);
+			path = Storage;
+			sourceTree = "<group>";
+		};
+		20F1D111940AF4BFD3AB6094 /* NextStopWidget */ = {
+			isa = PBXGroup;
+			children = (
+				EE3141C58877DE96F4DD28D5 /* Info.plist */,
+				E117B1D5D651AE0DF0CD6211 /* LockScreenWidget.swift */,
+				00161CD3B95E8BA211EE6111 /* NearbyStopsWidget.swift */,
+				92198E560009E092EE932D92 /* NextStopWidget.entitlements */,
+				387E83BFDAC4131B19F88F2E /* NextStopWidgetBundle.swift */,
+				06AACD3B11690285F18DD6E7 /* Provider.swift */,
+				E5586D3A09A53EEAFC368A0F /* RefreshArrivalsIntent.swift */,
+			);
+			path = NextStopWidget;
+			sourceTree = "<group>";
+		};
+		2877C5146A101A203B0C69B8 /* Location */ = {
+			isa = PBXGroup;
+			children = (
+				C45B4B0F05895BB969CE6639 /* LocationManager.swift */,
+			);
+			path = Location;
+			sourceTree = "<group>";
+		};
+		2BD15C362C23DF92E71B4B27 = {
+			isa = PBXGroup;
+			children = (
+				82B89845744B751D819C2F65 /* NextStop */,
+				2C456B68D59BA350C72D9BFF /* NextStopKit */,
+				20F1D111940AF4BFD3AB6094 /* NextStopWidget */,
+				CF53C57AC8B4C48E25A9674A /* Products */,
+				03A3EBA62FAE611F00F062EA /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
-		03C4FC222FAE4F5E003E5C30 /* Products */ = {
+		2C456B68D59BA350C72D9BFF /* NextStopKit */ = {
 			isa = PBXGroup;
 			children = (
-				03C4FC212FAE4F5E003E5C30 /* NextStop.app */,
+				FF54F8F924D02CC5494FF0FE /* Geo */,
+				C166970F24AE6A7076F58944 /* Models */,
+				D97225664AB66961292A0368 /* Realtime */,
+				BF53AFC55146B57E30806F68 /* StaticData */,
+				15C6109BC11B97F3D18D5A0F /* Storage */,
+				6C43C6F2D516C0CF0D4A0886 /* UI */,
+			);
+			path = NextStopKit;
+			sourceTree = "<group>";
+		};
+		31E1A224E3D558A2B9BF2CD3 /* Search */ = {
+			isa = PBXGroup;
+			children = (
+				60F3AC2A25A47178046EC801 /* BusStopListView.swift */,
+				F351D5512DF3FEDD66372044 /* DirectionPickerView.swift */,
+				DD93752C96F02171F0C7F5AF /* LineListView.swift */,
+				A8A77405C42F09F93693C44E /* StopListView.swift */,
+			);
+			path = Search;
+			sourceTree = "<group>";
+		};
+		6C43C6F2D516C0CF0D4A0886 /* UI */ = {
+			isa = PBXGroup;
+			children = (
+				C176F876819F68B2295F9F17 /* LineBullet.swift */,
+			);
+			path = UI;
+			sourceTree = "<group>";
+		};
+		82B89845744B751D819C2F65 /* NextStop */ = {
+			isa = PBXGroup;
+			children = (
+				F5E6A12A15F1DE34A7D1E727 /* Assets.xcassets */,
+				773D67C6459EF27DD4843486 /* Info.plist */,
+				36F722EE41F82189D2274995 /* NextStop.entitlements */,
+				7973F878A9FF6A7D5EDBE168 /* NextStopApp.swift */,
+				8019E18BE2AE03DAED758E44 /* RootView.swift */,
+				854A07130DFF34E667C47E80 /* Background */,
+				2877C5146A101A203B0C69B8 /* Location */,
+				A7568C2A00062957EF1B1210 /* Resources */,
+				9A1BAFFE041AA56FBB4FE941 /* SavedStops */,
+				31E1A224E3D558A2B9BF2CD3 /* Search */,
+				E44D4407CE3B7E806C56AFFF /* StopDetail */,
+			);
+			path = NextStop;
+			sourceTree = "<group>";
+		};
+		854A07130DFF34E667C47E80 /* Background */ = {
+			isa = PBXGroup;
+			children = (
+				89E6DCF4415B091C83DF7E92 /* BackgroundRefresh.swift */,
+				CB179BE83F06F576356BCDF0 /* RefreshCoordinator.swift */,
+			);
+			path = Background;
+			sourceTree = "<group>";
+		};
+		9A1BAFFE041AA56FBB4FE941 /* SavedStops */ = {
+			isa = PBXGroup;
+			children = (
+				5FC9D6690AD46A054CA70C33 /* SavedStopsView.swift */,
+			);
+			path = SavedStops;
+			sourceTree = "<group>";
+		};
+		A7568C2A00062957EF1B1210 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				5CEAFC01CB6AD4D369221B29 /* bus_stops.json */,
+				CBBC88A81860B5F3E7905B59 /* stops.json */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		BF53AFC55146B57E30806F68 /* StaticData */ = {
+			isa = PBXGroup;
+			children = (
+				72D91A4218DEB26BF1FB6D53 /* BusStopCatalog.swift */,
+				AFB157D3596AF0DBDC167598 /* StopCatalog.swift */,
+			);
+			path = StaticData;
+			sourceTree = "<group>";
+		};
+		C166970F24AE6A7076F58944 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D72C2C37F13759EF68324617 /* Arrival.swift */,
+				0748140B107715F86B1A5EE3 /* SavedStop.swift */,
+				D67E55F3A806CEE85E02564C /* StopGroup.swift */,
+				5EB7407EA906F2E2506A08CC /* TransitMode.swift */,
+				C6F2FF813F2B476090BFEB3C /* TransitStop.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		CF53C57AC8B4C48E25A9674A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				984741704029B76234A765C3 /* NextStop.app */,
+				6E4C5AF3A392FE498BE53F76 /* NextStopKit.framework */,
+				AB918F23B79CAF890FEE341B /* NextStopWidget.appex */,
 			);
 			name = Products;
+			sourceTree = "<group>";
+		};
+		D97225664AB66961292A0368 /* Realtime */ = {
+			isa = PBXGroup;
+			children = (
+				503B161DF476FCB78E6B0654 /* ArrivalsService.swift */,
+				A22823C1844A4306CA4ED7E5 /* BusTimeClient.swift */,
+				E280833F711D0C6249479340 /* FeedRouter.swift */,
+				00D1FD41F440A0668F3B3258 /* gtfs-realtime.pb.swift */,
+				DBCC8C1968A9B47CA07ACD3B /* GTFSRealtimeClient.swift */,
+				39CE6EDA30DEBE066D467968 /* Secrets.swift */,
+				6ABE6D8B7429E528D7099113 /* SnapshotRefresher.swift */,
+			);
+			path = Realtime;
+			sourceTree = "<group>";
+		};
+		E44D4407CE3B7E806C56AFFF /* StopDetail */ = {
+			isa = PBXGroup;
+			children = (
+				65258FDEE892EC82FCAF9CFE /* StopDetailView.swift */,
+			);
+			path = StopDetail;
+			sourceTree = "<group>";
+		};
+		FF54F8F924D02CC5494FF0FE /* Geo */ = {
+			isa = PBXGroup;
+			children = (
+				CE889BB8091DF62B7F41E118 /* Closest.swift */,
+			);
+			path = Geo;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		03C4FC202FAE4F5E003E5C30 /* NextStop */ = {
+		AC89CC049945E5CA11B258CE /* NextStop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 03C4FC2C2FAE4F5E003E5C30 /* Build configuration list for PBXNativeTarget "NextStop" */;
+			buildConfigurationList = CBBDE0B868BC4A25FF8E3DB2 /* Build configuration list for PBXNativeTarget "NextStop" */;
 			buildPhases = (
-				03C4FC1D2FAE4F5E003E5C30 /* Sources */,
-				03C4FC1E2FAE4F5E003E5C30 /* Frameworks */,
-				03C4FC1F2FAE4F5E003E5C30 /* Resources */,
+				DFFF527EEC859AD3F43133CE /* Sources */,
+				6D0D2FA0C674FB68A5A15468 /* Resources */,
+				7CB820C09AFCAA235B6B27E2 /* Frameworks */,
+				4332E214C003C72C71D80AC5 /* Embed Foundation Extensions */,
+				7E57DDAE7D6991BE3F2BFB78 /* Embed Frameworks */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-			);
-			fileSystemSynchronizedGroups = (
-				03C4FC232FAE4F5E003E5C30 /* NextStop */,
+				67CD9ADB50F74B65218CD05B /* PBXTargetDependency */,
+				DF2AD9EA01A402CCF82A43F8 /* PBXTargetDependency */,
 			);
 			name = NextStop;
 			packageProductDependencies = (
 			);
 			productName = NextStop;
-			productReference = 03C4FC212FAE4F5E003E5C30 /* NextStop.app */;
+			productReference = 984741704029B76234A765C3 /* NextStop.app */;
 			productType = "com.apple.product-type.application";
+		};
+		B95A7E7D7DA5F5D7BE1C8DA2 /* NextStopKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 61EA0DEF08044776AF12EF0A /* Build configuration list for PBXNativeTarget "NextStopKit" */;
+			buildPhases = (
+				9E4208ECCF11C01CDCF887D9 /* Sources */,
+				066C3B8E3B11AB97B5033994 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = NextStopKit;
+			packageProductDependencies = (
+				0813E1B4C1233630A4261C38 /* SwiftProtobuf */,
+			);
+			productName = NextStopKit;
+			productReference = 6E4C5AF3A392FE498BE53F76 /* NextStopKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		C20466FB5E3035F1F226DF5C /* NextStopWidget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = F7120AB6ABA8D09AB43C4211 /* Build configuration list for PBXNativeTarget "NextStopWidget" */;
+			buildPhases = (
+				BA2AE71C41148B671EF95234 /* Sources */,
+				7D6DA34D267A17AF1BD37930 /* Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				9896B3976C93049588EF56FD /* PBXTargetDependency */,
+			);
+			name = NextStopWidget;
+			packageProductDependencies = (
+			);
+			productName = NextStopWidget;
+			productReference = AB918F23B79CAF890FEE341B /* NextStopWidget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
-		03C4FC192FAE4F5E003E5C30 /* Project object */ = {
+		66BF7E08A702838ECEBB6CA5 /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				BuildIndependentTargetsInParallel = 1;
-				LastSwiftUpdateCheck = 2640;
-				LastUpgradeCheck = 2640;
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
 				TargetAttributes = {
-					03C4FC202FAE4F5E003E5C30 = {
-						CreatedOnToolsVersion = 26.4;
+					B95A7E7D7DA5F5D7BE1C8DA2 = {
+						DevelopmentTeam = REPLACE_WITH_TEAM_ID;
 					};
 				};
 			};
-			buildConfigurationList = 03C4FC1C2FAE4F5E003E5C30 /* Build configuration list for PBXProject "NextStop" */;
+			buildConfigurationList = AA22F3388D9C054F1D8A006F /* Build configuration list for PBXProject "NextStop" */;
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
 			knownRegions = (
-				en,
 				Base,
+				en,
 			);
-			mainGroup = 03C4FC182FAE4F5E003E5C30;
+			mainGroup = 2BD15C362C23DF92E71B4B27;
 			minimizedProjectReferenceProxies = 1;
+			packageReferences = (
+				DE03222141E2DBAA1B0131A8 /* XCRemoteSwiftPackageReference "swift-protobuf" */,
+			);
 			preferredProjectObjectVersion = 77;
-			productRefGroup = 03C4FC222FAE4F5E003E5C30 /* Products */;
+			productRefGroup = CF53C57AC8B4C48E25A9674A /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				03C4FC202FAE4F5E003E5C30 /* NextStop */,
+				AC89CC049945E5CA11B258CE /* NextStop */,
+				B95A7E7D7DA5F5D7BE1C8DA2 /* NextStopKit */,
+				C20466FB5E3035F1F226DF5C /* NextStopWidget */,
 			);
 		};
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		03C4FC1F2FAE4F5E003E5C30 /* Resources */ = {
+		6D0D2FA0C674FB68A5A15468 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				CEA1FEB24969CE0DCA73883B /* Assets.xcassets in Resources */,
+				51A7EB4047561B885A0AE50E /* bus_stops.json in Resources */,
+				0B24DAE2F3F9AD48F68D283E /* stops.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		03C4FC1D2FAE4F5E003E5C30 /* Sources */ = {
+		9E4208ECCF11C01CDCF887D9 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				30017193D48E772122C5D24F /* AppGroup.swift in Sources */,
+				21DCE4E1531351DD9C752C77 /* Arrival.swift in Sources */,
+				DD7AC8E5136CE3AD4F486355 /* ArrivalsService.swift in Sources */,
+				474DA66D8C2D88377F5432BE /* BusStopCatalog.swift in Sources */,
+				F7E9AE4A9DFA29E684C7ED8C /* BusTimeClient.swift in Sources */,
+				4FCE572420E614B33B6C55FB /* Closest.swift in Sources */,
+				E20AB32304C33C274A90B5EB /* FeedRouter.swift in Sources */,
+				F32CFFAC270D6CEBAFCC4AF0 /* GTFSRealtimeClient.swift in Sources */,
+				7156AC5CFB16C128ED3EEA33 /* LineBullet.swift in Sources */,
+				BE24F4ABC375301DD8F2E6C9 /* SavedStop.swift in Sources */,
+				1B4067575E151EEAA5CB4D2D /* SavedStopsStore.swift in Sources */,
+				D92E70DC3E1EBB7365F14C59 /* Secrets.swift in Sources */,
+				32FFFB16AC67FD4003866CE7 /* SnapshotRefresher.swift in Sources */,
+				E73CF104ECB6E1C79B43884A /* StopCatalog.swift in Sources */,
+				5D9096FCA0BC653BF91FBA64 /* StopGroup.swift in Sources */,
+				98B4A64AECCB4EE8189DF91E /* TransitMode.swift in Sources */,
+				D57FDB18B91AFAE1041C58FD /* TransitStop.swift in Sources */,
+				18D98F7AFB8574B750E2341E /* gtfs-realtime.pb.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		BA2AE71C41148B671EF95234 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				0AF8DAE141B9362810182C88 /* LockScreenWidget.swift in Sources */,
+				72192A9EAA29C58DB83F1DA6 /* NearbyStopsWidget.swift in Sources */,
+				65B1F81EBEF0EA85E7B91404 /* NextStopWidgetBundle.swift in Sources */,
+				B19740539A58C11FD0B98F79 /* Provider.swift in Sources */,
+				D0482DF44691101B58ED8829 /* RefreshArrivalsIntent.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DFFF527EEC859AD3F43133CE /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				B72D377C9C8EA5636204C506 /* BackgroundRefresh.swift in Sources */,
+				B5F293B3789B7F502EB378AC /* BusStopListView.swift in Sources */,
+				5AEC5FDB5D0EC0FD427122C2 /* DirectionPickerView.swift in Sources */,
+				43CEE829E2A60BB609E9FD12 /* LineListView.swift in Sources */,
+				05EDDBD2130484A4412DDEF2 /* LocationManager.swift in Sources */,
+				E53C40217940F84BAE6F0781 /* NextStopApp.swift in Sources */,
+				F8EC3A579B4208001ECCDEB6 /* RefreshCoordinator.swift in Sources */,
+				91427AA90C6A7795F0322458 /* RootView.swift in Sources */,
+				2E3FC23C285D1D37ACE1A964 /* SavedStopsView.swift in Sources */,
+				73D6D2C9C28AF7AA1C072009 /* StopDetailView.swift in Sources */,
+				70CD28AF6646D6CEEA97C6BE /* StopListView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
+/* Begin PBXTargetDependency section */
+		67CD9ADB50F74B65218CD05B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B95A7E7D7DA5F5D7BE1C8DA2 /* NextStopKit */;
+			targetProxy = F53A4095211B6EA77674B723 /* PBXContainerItemProxy */;
+		};
+		9896B3976C93049588EF56FD /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = B95A7E7D7DA5F5D7BE1C8DA2 /* NextStopKit */;
+			targetProxy = 9687E259D2C8E189F2DCF36F /* PBXContainerItemProxy */;
+		};
+		DF2AD9EA01A402CCF82A43F8 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C20466FB5E3035F1F226DF5C /* NextStopWidget */;
+			targetProxy = 91FD15FDE986C1FA91D628FF /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
 /* Begin XCBuildConfiguration section */
-		03C4FC2A2FAE4F5E003E5C30 /* Debug */ = {
+		14C0D49C2D272521BCF386A0 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NextStopWidget/NextStopWidget.entitlements;
+				DEVELOPMENT_TEAM = 5VBH9JMZF7;
+				INFOPLIST_FILE = NextStopWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.NextStop.widget";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		282F775FB1BAA1C5389E1793 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.NextStopKit";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Debug;
+		};
+		3276A5FFA820690B1C48E21D /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = NextStopWidget/NextStopWidget.entitlements;
+				DEVELOPMENT_TEAM = 5VBH9JMZF7;
+				INFOPLIST_FILE = NextStopWidget/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@executable_path/../../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.NextStop.widget";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		76FDEA639A966AE52DCD011F /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = NextStop/NextStop.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				DEVELOPMENT_TEAM = 5VBH9JMZF7;
+				INFOPLIST_FILE = NextStop/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow background location so your widget stays accurate when you move between neighborhoods.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NextStop uses your location to show the closest saved transit stops.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.NextStop";
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		7E7C0C6A1949EDA7FD134C32 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.NextStopKit";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+			};
+			name = Release;
+		};
+		8047B5D28300B33481203626 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = "TEMP_A2AB90E2-2642-4659-BE2B-8C3BA045AACF" /* Local.xcconfig */;
+			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
 				CLANG_ENABLE_OBJC_WEAK = YES;
@@ -159,18 +690,77 @@
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		90F5F0218377F46A1DBF8CF0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = "TEMP_A2AB90E2-2642-4659-BE2B-8C3BA045AACF" /* Local.xcconfig */;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEVELOPMENT_TEAM = 5VBH9JMZF7;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_OPTIMIZATION_LEVEL = 0;
 				GCC_PREPROCESSOR_DEFINITIONS = (
-					"DEBUG=1",
 					"$(inherited)",
+					"DEBUG=1",
 				);
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
@@ -178,179 +768,101 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 17.0;
+				MARKETING_VERSION = 0.1;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
 				ONLY_ACTIVE_ARCH = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "DEBUG $(inherited)";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
 			};
 			name = Debug;
 		};
-		03C4FC2B2FAE4F5E003E5C30 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				ASSETCATALOG_COMPILER_GENERATE_SWIFT_ASSET_SYMBOL_EXTENSIONS = YES;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++20";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_ENABLE_OBJC_WEAK = YES;
-				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_COMMA = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INFINITE_RECURSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
-				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
-				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
-				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
-				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
-				CLANG_WARN_STRICT_PROTOTYPES = YES;
-				CLANG_WARN_SUSPICIOUS_MOVE = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				COPY_PHASE_STRIP = NO;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEVELOPMENT_TEAM = 5VBH9JMZF7;
-				ENABLE_NS_ASSERTIONS = NO;
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
-				GCC_C_LANGUAGE_STANDARD = gnu17;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
-				MTL_ENABLE_DEBUG_INFO = NO;
-				MTL_FAST_MATH = YES;
-				SWIFT_COMPILATION_MODE = wholemodule;
-			};
-			name = Release;
-		};
-		03C4FC2D2FAE4F5E003E5C30 /* Debug */ = {
+		97FD4B82EF826CC0BC714BB4 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
+				CODE_SIGN_ENTITLEMENTS = NextStop/NextStop.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				DEVELOPMENT_TEAM = 5VBH9JMZF7;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
-				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 26.4;
-				MARKETING_VERSION = 1.0;
+				INFOPLIST_FILE = NextStop/Info.plist;
+				INFOPLIST_KEY_NSLocationAlwaysAndWhenInUseUsageDescription = "Allow background location so your widget stays accurate when you move between neighborhoods.";
+				INFOPLIST_KEY_NSLocationWhenInUseUsageDescription = "NextStop uses your location to show the closest saved transit stops.";
+				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
+				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.NextStop";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
-				SDKROOT = auto;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 26.4;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
 			};
 			name = Debug;
-		};
-		03C4FC2E2FAE4F5E003E5C30 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
-				CODE_SIGN_STYLE = Automatic;
-				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_TEAM = 5VBH9JMZF7;
-				ENABLE_APP_SANDBOX = YES;
-				ENABLE_HARDENED_RUNTIME = YES;
-				ENABLE_PREVIEWS = YES;
-				ENABLE_USER_SELECTED_FILES = readonly;
-				GENERATE_INFOPLIST_FILE = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSceneManifest_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphoneos*]" = YES;
-				"INFOPLIST_KEY_UILaunchScreen_Generation[sdk=iphonesimulator*]" = YES;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphoneos*]" = UIStatusBarStyleDefault;
-				"INFOPLIST_KEY_UIStatusBarStyle[sdk=iphonesimulator*]" = UIStatusBarStyleDefault;
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
-				IPHONEOS_DEPLOYMENT_TARGET = 26.4;
-				LD_RUNPATH_SEARCH_PATHS = "@executable_path/Frameworks";
-				"LD_RUNPATH_SEARCH_PATHS[sdk=macosx*]" = "@executable_path/../Frameworks";
-				MACOSX_DEPLOYMENT_TARGET = 26.4;
-				MARKETING_VERSION = 1.0;
-				PRODUCT_BUNDLE_IDENTIFIER = "Joshua-Cohen.NextStop";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				REGISTER_APP_GROUPS = YES;
-				SDKROOT = auto;
-				STRING_CATALOG_GENERATE_SYMBOLS = YES;
-				SUPPORTED_PLATFORMS = "iphoneos iphonesimulator macosx xros xrsimulator";
-				SWIFT_APPROACHABLE_CONCURRENCY = YES;
-				SWIFT_DEFAULT_ACTOR_ISOLATION = MainActor;
-				SWIFT_EMIT_LOC_STRINGS = YES;
-				SWIFT_UPCOMING_FEATURE_MEMBER_IMPORT_VISIBILITY = YES;
-				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2,7";
-				XROS_DEPLOYMENT_TARGET = 26.4;
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		03C4FC1C2FAE4F5E003E5C30 /* Build configuration list for PBXProject "NextStop" */ = {
+		61EA0DEF08044776AF12EF0A /* Build configuration list for PBXNativeTarget "NextStopKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03C4FC2A2FAE4F5E003E5C30 /* Debug */,
-				03C4FC2B2FAE4F5E003E5C30 /* Release */,
+				282F775FB1BAA1C5389E1793 /* Debug */,
+				7E7C0C6A1949EDA7FD134C32 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
 		};
-		03C4FC2C2FAE4F5E003E5C30 /* Build configuration list for PBXNativeTarget "NextStop" */ = {
+		AA22F3388D9C054F1D8A006F /* Build configuration list for PBXProject "NextStop" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				03C4FC2D2FAE4F5E003E5C30 /* Debug */,
-				03C4FC2E2FAE4F5E003E5C30 /* Release */,
+				90F5F0218377F46A1DBF8CF0 /* Debug */,
+				8047B5D28300B33481203626 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
+			defaultConfigurationName = Debug;
+		};
+		CBBDE0B868BC4A25FF8E3DB2 /* Build configuration list for PBXNativeTarget "NextStop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				97FD4B82EF826CC0BC714BB4 /* Debug */,
+				76FDEA639A966AE52DCD011F /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		F7120AB6ABA8D09AB43C4211 /* Build configuration list for PBXNativeTarget "NextStopWidget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3276A5FFA820690B1C48E21D /* Debug */,
+				14C0D49C2D272521BCF386A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		DE03222141E2DBAA1B0131A8 /* XCRemoteSwiftPackageReference "swift-protobuf" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-protobuf";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.27.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		0813E1B4C1233630A4261C38 /* SwiftProtobuf */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = DE03222141E2DBAA1B0131A8 /* XCRemoteSwiftPackageReference "swift-protobuf" */;
+			productName = SwiftProtobuf;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
-	rootObject = 03C4FC192FAE4F5E003E5C30 /* Project object */;
+	rootObject = 66BF7E08A702838ECEBB6CA5 /* Project object */;
 }

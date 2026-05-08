@@ -1,0 +1,25 @@
+# Xcode
+*.xcuserstate
+xcuserdata/
+DerivedData/
+build/
+*.xcworkspace/xcuserdata/
+.swiftpm/
+
+# macOS
+.DS_Store
+
+# Secrets — do not commit credentials
+NextStopKit/Realtime/Secrets.swift
+
+# Local-only build settings (Team ID, etc.)
+Local.xcconfig
+
+# Generated artifacts (regenerate with Tools/ scripts)
+NextStopKit/Realtime/gtfs_realtime.pb.swift
+NextStopKit/Realtime/gtfs-realtime.pb.swift
+NextStop/Resources/stops.json
+NextStop/Resources/bus_stops.json
+
+# xcodegen backups
+*.xcodeproj.bak.*
