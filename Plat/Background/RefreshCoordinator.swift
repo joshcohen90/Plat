@@ -54,10 +54,21 @@ public actor RefreshCoordinator {
 
         let chosen = Array(sortedGroups.prefix(3))
         let stopsToFetch = chosen.flatMap { $0.group.stops }
-        let arrivalsByStop = await ArrivalsService.shared.arrivalsByStop(for: stopsToFetch, limit: 3)
+
+        async let arrivalsTask = ArrivalsService.shared.arrivalsByStop(for: stopsToFetch, limit: 3)
+        let subwayLines = Set(stopsToFetch.compactMap { $0.mode == .subway ? $0.line : nil })
+        async let alertsTask = AlertsClient.shared.alertsByLine(forLines: subwayLines)
+
+        let arrivalsByStop = await arrivalsTask
+        let alertsByLine = await alertsTask
 
         let slots = chosen.map { item in
-            SnapshotRefresher.buildSlot(group: item.group, distance: item.meters, arrivalsByStop: arrivalsByStop)
+            SnapshotRefresher.buildSlot(
+                group: item.group,
+                distance: item.meters,
+                arrivalsByStop: arrivalsByStop,
+                alertsByLine: alertsByLine
+            )
         }
         let snapshot = WidgetSnapshot(generatedAt: .now, groups: slots)
         SnapshotStore.write(snapshot)

@@ -33,12 +33,18 @@ public struct WidgetSnapshot: Codable, Sendable {
         public let distanceMeters: Double
         /// Soonest arrival across all member stops in this group, or nil if none.
         public let nextArrival: Arrival?
+        /// Most-severe MTA service alert affecting any of this group's lines,
+        /// or nil if no major alerts apply.
+        public let alertEffect: ServiceAlert.Effect?
+        public let alertHeader: String?
 
         public init(groupID: String, displayName: String, lines: [String], directionLabel: String,
-                    distanceMeters: Double, nextArrival: Arrival?) {
+                    distanceMeters: Double, nextArrival: Arrival?,
+                    alertEffect: ServiceAlert.Effect? = nil, alertHeader: String? = nil) {
             self.groupID = groupID; self.displayName = displayName
             self.lines = lines; self.directionLabel = directionLabel
             self.distanceMeters = distanceMeters; self.nextArrival = nextArrival
+            self.alertEffect = alertEffect; self.alertHeader = alertHeader
         }
     }
 

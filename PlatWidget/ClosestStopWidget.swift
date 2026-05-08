@@ -62,9 +62,14 @@ private struct ClosestStopView: View {
                         .foregroundStyle(.secondary)
                 }
 
-                Text(group.displayName)
-                    .font(.caption.weight(.semibold))
-                    .lineLimit(1)
+                HStack(spacing: 4) {
+                    Text(group.displayName)
+                        .font(.caption.weight(.semibold))
+                        .lineLimit(1)
+                    if let effect = group.alertEffect {
+                        AlertPill(effect: effect, compact: true)
+                    }
+                }
                 if !group.directionLabel.isEmpty {
                     Text(group.directionLabel)
                         .font(.caption2)
@@ -72,6 +77,7 @@ private struct ClosestStopView: View {
                         .lineLimit(1)
                 }
             }
+            .widgetURL(deepLink(for: group))
         } else {
             VStack(spacing: 4) {
                 Image(systemName: "tram.fill").font(.title3).foregroundStyle(.secondary)

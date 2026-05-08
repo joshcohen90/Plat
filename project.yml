@@ -51,6 +51,10 @@ targets:
           - processing
         BGTaskSchedulerPermittedIdentifiers:
           - Joshua-Cohen.Plat.refresh
+        CFBundleURLTypes:
+          - CFBundleURLName: Joshua-Cohen.Plat
+            CFBundleURLSchemes:
+              - plat
     dependencies:
       - target: PlatKit
         embed: true
