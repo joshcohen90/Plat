@@ -6,6 +6,17 @@
 	<array>
 		<string>Joshua-Cohen.Plat.refresh</string>
 	</array>
+	<key>CFBundleURLTypes</key>
+	<array>
+		<dict>
+			<key>CFBundleURLName</key>
+			<string>Joshua-Cohen.Plat</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>plat</string>
+			</array>
+		</dict>
+	</array>
 	<key>CFBundleDevelopmentRegion</key>
 	<string>$(DEVELOPMENT_LANGUAGE)</string>
 	<key>CFBundleExecutable</key>

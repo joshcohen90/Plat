@@ -72,6 +72,7 @@ private struct ClosestStopView: View {
                         .lineLimit(1)
                 }
             }
+            .widgetURL(deepLink(for: group))
         } else {
             VStack(spacing: 4) {
                 Image(systemName: "tram.fill").font(.title3).foregroundStyle(.secondary)

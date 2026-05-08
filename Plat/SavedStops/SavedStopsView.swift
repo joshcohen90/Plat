@@ -4,16 +4,18 @@ import PlatKit
 struct SavedStopsView: View {
     @EnvironmentObject private var saved: SavedStopsStore
     @EnvironmentObject private var location: LocationManager
+    @Binding var path: NavigationPath
     @State private var editMode: EditMode = .inactive
     @State private var selection: Set<SavedStop.ID> = []
 
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path) {
             content
                 .navigationTitle("Stops")
                 .toolbar { toolbarContent }
                 .environment(\.editMode, $editMode)
                 .navigationDestination(for: SavedStop.self) { StopDetailView(stop: $0) }
+                .navigationDestination(for: ResolvedGroup.self) { CombinedStopDetailView(group: $0) }
                 .refreshable {
                     await RefreshCoordinator.shared.refresh(reason: .pullToRefresh)
                 }
@@ -31,7 +33,7 @@ struct SavedStopsView: View {
         } else {
             List(selection: $selection) {
                 ForEach(saved.resolvedGroups) { group in
-                    GroupSection(group: group, distance: distance(to: group))
+                    GroupSection(group: group, distance: distance(to: group), editing: editMode == .active)
                 }
             }
             .listStyle(.insetGrouped)
@@ -83,24 +85,53 @@ struct SavedStopsView: View {
 private struct GroupSection: View {
     let group: ResolvedGroup
     let distance: Double?
+    let editing: Bool
 
     @EnvironmentObject private var saved: SavedStopsStore
 
     var body: some View {
         Section {
-            ForEach(group.stops) { stop in
+            if editing {
+                // Edit mode: expose every member stop so the user can multi-select
+                // for combine, ungroup individual members, or delete.
+                ForEach(group.stops) { stop in
+                    SavedStopRow(stop: stop, showsChevron: false)
+                        .tag(stop.id)
+                        .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                            if group.isGrouped {
+                                Button {
+                                    saved.ungroup(stop)
+                                    Task { await RefreshCoordinator.shared.refresh(reason: .savedStopsChanged) }
+                                } label: { Label("Ungroup", systemImage: "rectangle.split.2x1") }
+                                .tint(.orange)
+                            }
+                            Button(role: .destructive) {
+                                saved.remove(stop)
+                                Task { await RefreshCoordinator.shared.refresh(reason: .savedStopsChanged) }
+                            } label: { Label("Delete", systemImage: "trash") }
+                        }
+                }
+            } else if group.isGrouped {
+                // One tappable row → combined chronological feed.
+                NavigationLink(value: group) {
+                    CombinedStopRow(group: group)
+                }
+                .swipeActions(edge: .trailing, allowsFullSwipe: false) {
+                    Button {
+                        for stop in group.stops { saved.ungroup(stop) }
+                        Task { await RefreshCoordinator.shared.refresh(reason: .savedStopsChanged) }
+                    } label: { Label("Ungroup", systemImage: "rectangle.split.2x1") }
+                    .tint(.orange)
+                    Button(role: .destructive) {
+                        for stop in group.stops { saved.remove(stop) }
+                        Task { await RefreshCoordinator.shared.refresh(reason: .savedStopsChanged) }
+                    } label: { Label("Delete", systemImage: "trash") }
+                }
+            } else if let stop = group.stops.first {
                 NavigationLink(value: stop) {
                     SavedStopRow(stop: stop, showsChevron: false)
                 }
-                .tag(stop.id)
                 .swipeActions(edge: .trailing, allowsFullSwipe: false) {
-                    if group.isGrouped {
-                        Button {
-                            saved.ungroup(stop)
-                            Task { await RefreshCoordinator.shared.refresh(reason: .savedStopsChanged) }
-                        } label: { Label("Ungroup", systemImage: "rectangle.split.2x1") }
-                        .tint(.orange)
-                    }
                     Button(role: .destructive) {
                         saved.remove(stop)
                         Task { await RefreshCoordinator.shared.refresh(reason: .savedStopsChanged) }
@@ -166,6 +197,35 @@ struct SavedStopRow: View {
             }
         }
         .padding(.vertical, 2)
+    }
+}
+
+/// Single row representation of a manually combined group. Shows a stack of
+/// route badges for the group's unique lines plus a member count.
+struct CombinedStopRow: View {
+    let group: ResolvedGroup
+
+    var body: some View {
+        HStack(spacing: 12) {
+            CombinedRouteCluster(stops: group.stops)
+            VStack(alignment: .leading, spacing: 2) {
+                Text(linesLabel)
+                    .font(.subheadline.weight(.medium))
+                    .foregroundStyle(.primary)
+                    .lineLimit(1)
+                Text("\(group.stops.count) stops · combined feed")
+                    .font(.caption)
+                    .foregroundStyle(.secondary)
+                    .lineLimit(1)
+            }
+        }
+        .padding(.vertical, 2)
+    }
+
+    private var linesLabel: String {
+        let lines = group.lines
+        if lines.count <= 3 { return lines.joined(separator: " · ") }
+        return lines.prefix(3).joined(separator: " · ") + " +\(lines.count - 3)"
     }
 }
 

@@ -24,6 +24,12 @@ struct LockScreenView: View {
         let group = entry.snapshot?.groups.first
         let arrival = group?.nextArrival
 
+        content(group: group, arrival: arrival)
+            .widgetURL(group.map { deepLink(for: $0) })
+    }
+
+    @ViewBuilder
+    private func content(group: WidgetSnapshot.GroupSlot?, arrival: Arrival?) -> some View {
         switch family {
         case .accessoryInline:
             if let group, let arrival {

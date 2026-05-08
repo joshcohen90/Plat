@@ -27,7 +27,9 @@ struct NearbyStopsView: View {
                 Divider().opacity(0.25).padding(.vertical, 4)
                 VStack(spacing: 8) {
                     ForEach(snap.groups.prefix(3)) { group in
-                        GroupRow(group: group)
+                        Link(destination: deepLink(for: group)) {
+                            GroupRow(group: group)
+                        }
                     }
                 }
                 Spacer(minLength: 0)
@@ -153,4 +155,12 @@ enum Theme {
             startPoint: .top, endPoint: .bottom
         )
     }
+}
+
+/// Per-row deep link consumed by `RootView.handleDeepLink`. Group IDs may
+/// contain reserved chars (the singleton case reuses the SavedStop.id format
+/// `mode|stopID|line|directionCode`), so percent-encode the path component.
+func deepLink(for group: WidgetSnapshot.GroupSlot) -> URL {
+    let id = group.groupID.addingPercentEncoding(withAllowedCharacters: .urlPathAllowed) ?? group.groupID
+    return URL(string: "plat://group/\(id)") ?? URL(string: "plat://group")!
 }
